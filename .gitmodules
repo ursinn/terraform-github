@@ -1,0 +1,3 @@
+[submodule "modules/github-repo"]
+	path = modules/github-repo
+	url = https://github.com/ursinn/terraform-module-github-repo.git
