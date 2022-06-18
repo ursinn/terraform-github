@@ -10,15 +10,14 @@ terraform {
 
 provider "github" {
   token = var.github_token
-  owner = "ursinn"
+  owner = var.github_owner
 }
 
 # Repo Settings
 module "github-repo" {
   source = "./modules/github-repo"
 
-  for_each         = var.github
-  repos            = each.value.repos
-  branches         = each.value.branches
-  default_branches = each.value.default_branches
+  repos            = var.github_repos
+  branches         = var.github_branches
+  default_branches = var.github_default_branches
 }
